@@ -1,0 +1,62 @@
+    /* 基础样式 */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        line-height: 1.6;
+        background: #f5f5f5;
+    }
+
+    /* 导航栏 */
+    .navbar {
+        background: #2c3e50;
+        color: white;
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-right: 2rem;
+    }
+
+    /* 主体内容 */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    /* 文章卡片 */
+    .post-card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 600px) {
+        .container {
+            padding: 1rem;
+        }
+        
+        .navbar a {
+            display: block;
+            margin: 0.5rem 0;
+        }
+    }
+
+    /* 代码块样式 */
+    pre code {
+        border-radius: 6px;
+        padding: 1rem !important;
+        margin: 1rem 0;
+    }

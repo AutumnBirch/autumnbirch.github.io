@@ -8,70 +8,8 @@
     <link rel="shortcut icon" href="./src/images/favicon-96x96.png" type="image/x-icon">
     <!-- 引入 highlight.js 代码高亮 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-    <style>
-        /* 基础样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            background: #f5f5f5;
-        }
-
-        /* 导航栏 */
-        .navbar {
-            background: #2c3e50;
-            color: white;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-right: 2rem;
-        }
-
-        /* 主体内容 */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* 文章卡片 */
-        .post-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 600px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .navbar a {
-                display: block;
-                margin: 0.5rem 0;
-            }
-        }
-
-        /* 代码块样式 */
-        pre code {
-            border-radius: 6px;
-            padding: 1rem !important;
-            margin: 1rem 0;
-        }
-    </style>
+    <!-- 引入网页基础样式 -->
+    <link rel="stylesheet" href="./src/css/index.css">
 </head>
 <body>
     <nav class="navbar">
@@ -82,8 +20,9 @@
     <div class="container" id="home">
         <div class="post-card">
             <h1>欢迎来到我的学习博客 👋</h1>
-            <img src="./src/images/avatar.jpg" alt="头像" style="border-radius: 50%; margin: 1rem 0;">
-            <p>我是正在学习前端开发的新手，这里会记录我的学习笔记和项目实践！</p>
+            <img src="./src/images/avatar.jpg" alt="头像" style="border-radius: 50%; margin: 1rem 0; width: 36px;;">
+            <p>秋日白桦</p><br>
+            <p>无力让时光折返，别徒添内疚。</p>
         </div>
 
         <div class="post-card" id="posts">
