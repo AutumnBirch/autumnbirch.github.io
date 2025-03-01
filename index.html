@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的学习博客</title>
+    <!-- 引入网页小图标 -->
+    <link rel="shortcut icon" href="./src/images/favicon-96x96.png" type="image/x-icon">
+    <!-- 引入 highlight.js 代码高亮 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 2rem;
+        }
+
+        /* 主体内容 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 文章卡片 */
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .navbar a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* 代码块样式 */
+        pre code {
+            border-radius: 6px;
+            padding: 1rem !important;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#home">主页</a>
+        <a href="#posts">文章</a>
+    </nav>
+
+    <div class="container" id="home">
+        <div class="post-card">
+            <h1>欢迎来到我的学习博客 👋</h1>
+            <img src="https://via.placeholder.com/150" alt="头像" style="border-radius: 50%; margin: 1rem 0;">
+            <p>我是正在学习前端开发的新手，这里会记录我的学习笔记和项目实践！</p>
+        </div>
+
+        <div class="post-card" id="posts">
+            <h2>最新文章 📚</h2>
+            <div id="post-list"></div>
+        </div>
+    </div>
+
+    <script>
+        // 动态加载文章列表
+        const posts = [
+            {
+                title: "我的第一个HTML页面",
+                date: "2024-03-15",
+                content: `<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+    <h1>你好，世界！</h1>
+</body>
+</html>`
+            },
+            {
+                title: "CSS布局小技巧",
+                date: "2024-03-16",
+                content: `.container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}`
+            }
+        ];
+
+        // 渲染文章列表
+        const postList = document.getElementById('post-list');
+        posts.forEach(post => {
+            postList.innerHTML += `
+                <div class="post-card">
+                    <h3>${post.title}</h3>
+                    <small>${post.date}</small>
+                    <pre><code class="language-html">${post.content}</code></pre>
+                </div>
+            `;
+        });
+
+        // 初始化代码高亮
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        });
+    </script>
+
+    <!-- 引入 highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</body>
+</html>
