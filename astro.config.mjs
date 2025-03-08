@@ -17,10 +17,11 @@ export default defineConfig({
 					slug:'start-doc',
 				},
 				{
-					label: '教程',
+					label: '教程&心得',
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: '引言', slug: 'guides/example' },
+						{ label: '有关复盘', slug: 'guides/review' },
 					],
 				},
 				{
