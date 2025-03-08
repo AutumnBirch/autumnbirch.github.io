@@ -1,0 +1,38 @@
+---
+title: 欢迎来到秋樺的博客
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: Hi！共同进步呀~
+  image:
+    file: ../../assets/Akarin.jpg
+  actions:
+    - text: 博客内容
+      link: /guides/example/
+      icon: right-arrow
+    - text: Bilibili主页
+      link: https://space.bilibili.com/1731000601
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## 有关内容
+
+<CardGrid stagger>
+	<Card title="更新日志" icon="pencil">
+		博客页面重构
+		- 将较为粗糙的手搓博客更改为基于 Astro 框架构建的全功能文档主题（Starlight）。
+	</Card>
+	<Card title="最新博客" icon="add-document">
+		笔记内容整理中，敬请期待qwq。
+	</Card>
+	<Card title="碎碎念" icon="setting">
+		好好学习天天向上（
+	</Card>
+	<Card title="欢迎交流" icon="open-book">
+		联系方式：
+		- 邮箱：AutumnBirch@163.com
+	</Card>
+</CardGrid>
