@@ -31,8 +31,8 @@ npm run dev
 
 当然你也可以把它当作你自己的 Astro 文档或个人主页模板。以下为一些代码修改的提示。
 
-本站包含一个Astro模板，[Starlight](https://starlight.astro.build/)直接查阅他的文档和代码仓库对比进行修改即可。
+本站包含一个Astro模板，[Starlight](https://starlight.astro.build/)直接查阅它的文档和代码仓库对比进行修改即可。
 
 ## 最后
 
-欢迎各位PR
+欢迎PR

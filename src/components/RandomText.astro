@@ -1,0 +1,91 @@
+---
+// src/components/RandomText.astro
+const { sentences } = Astro.props;
+const initialText = sentences[Math.floor(Math.random() * sentences.length)];
+---
+
+<div id="randomText" 
+     class="random-card" 
+     data-sentences={JSON.stringify(sentences)}>
+  <div class="content">{initialText}</div>
+</div>
+
+<style>
+  /* 卡片基础样式 */
+  .random-card {
+    cursor: pointer;
+    padding: 0.9rem;
+    margin: 1.2rem 0;
+    border: 1px solid #e5e7ebb2;
+    border-radius: 0.1rem;
+    /* background: white; */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  /* 悬停效果 */
+  .random-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+  }
+
+  /* 点击动画 */
+  .random-card:active {
+    transform: scale(1);
+  }
+
+  /* 内容样式 */
+  .content {
+    font-size: 0.89rem;
+    /* color: #7fa3db; */
+    color: #718096;
+    font-family: 'Fira Code','Menlo', monospace;
+    text-align: center;
+  }
+
+  /* 暗色模式适配 */
+  @media (prefers-color-scheme: dark) {
+    .random-card {
+      /* background: #23262f; */
+      background: transparent;
+      border-color: #475569,0.5;
+    }
+
+/* pre {
+  background: #f8fafc !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem;
+  code {
+    font-family: 'Fira Code', monospace;
+    color: #3b82f6;
+  }
+} */
+</style>
+
+<script>
+document.querySelectorAll('.random-card').forEach(el => {
+  const sentences = JSON.parse(el.dataset.sentences);
+  let currentIndex = sentences.indexOf(el.querySelector('.content').textContent);
+  
+  el.addEventListener('click', () => {
+    // 防重复点击逻辑
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * sentences.length);
+    } while (newIndex === currentIndex);
+    
+    currentIndex = newIndex;
+    
+    // 添加动画类
+    el.classList.add('animate-pulse');
+    setTimeout(() => {
+      el.classList.remove('animate-pulse');
+    }, 200);
+    
+    // 更新内容
+    el.querySelector('.content').textContent = sentences[newIndex];
+  });
+});
+</script>
