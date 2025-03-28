@@ -38,7 +38,7 @@ const initialText = sentences[Math.floor(Math.random() * sentences.length)];
 
   /* 内容样式 */
   .content {
-    font-size: 0.89rem;
+    font-size: 0.9rem;
     /* color: #7fa3db; */
     color: #718096;
     font-family: 'Fira Code','Menlo', monospace;
@@ -52,7 +52,7 @@ const initialText = sentences[Math.floor(Math.random() * sentences.length)];
       background: transparent;
       border-color: #475569,0.5;
     }
-
+  }
 /* pre {
   background: #f8fafc !important;
   padding: 1rem !important;
@@ -66,26 +66,35 @@ const initialText = sentences[Math.floor(Math.random() * sentences.length)];
 
 <script>
 document.querySelectorAll('.random-card').forEach(el => {
-  const sentences = JSON.parse(el.dataset.sentences);
-  let currentIndex = sentences.indexOf(el.querySelector('.content').textContent);
-  
+  const sentences = JSON.parse(el.dataset.sentences || '[]');
+  if (sentences.length === 0) return;
+
+  const content = el.querySelector('.content');
+  let currentIndex = sentences.indexOf(content.textContent);
+  let isAnimating = false;
+
+  const updateText = (newIndex) => {
+    currentIndex = newIndex;
+    content.classList.add('fade-out');
+    
+    setTimeout(() => {
+      content.textContent = sentences[newIndex];
+      content.classList.remove('fade-out');
+      if ('vibrate' in navigator) navigator.vibrate(10);
+    }, 150);
+  };
+
   el.addEventListener('click', () => {
-    // 防重复点击逻辑
+    if (isAnimating) return;
+    isAnimating = true;
+
     let newIndex;
     do {
       newIndex = Math.floor(Math.random() * sentences.length);
-    } while (newIndex === currentIndex);
-    
-    currentIndex = newIndex;
-    
-    // 添加动画类
-    el.classList.add('animate-pulse');
-    setTimeout(() => {
-      el.classList.remove('animate-pulse');
-    }, 200);
-    
-    // 更新内容
-    el.querySelector('.content').textContent = sentences[newIndex];
+    } while (sentences.length > 1 && newIndex === currentIndex);
+
+    updateText(newIndex);
+    setTimeout(() => isAnimating = false, 200);
   });
 });
 </script>

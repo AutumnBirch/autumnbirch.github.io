@@ -1,5 +1,12 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "include": [
+    "src/**/*.ts", 
+    "src/**/*.astro", // 仅保留实际存在的Astro文件类型
+    ".astro/types.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.ts" // 添加自定义排除模式
+  ]
 }

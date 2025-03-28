@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightGiscus from 'starlight-giscus';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +12,14 @@ export default defineConfig({
 				github: 'https://github.com/AutumnBirch',
 				youtube: 'https://space.bilibili.com/1731000601'
 			},
+			plugins: [ // ✅ 正确插件加载位置
+				starlightGiscus({
+				  repo: 'AutumnBirch/autumnbirch.github.io',
+				  repoId: 'R_kgDOOBUM_Q',
+				  category: 'General',
+				  categoryId: 'DIC_kwDOOBUM_c4Coie2'
+				})
+			],
 			sidebar: [
 				{
 					label:'开篇文档',
