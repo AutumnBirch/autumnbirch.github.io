@@ -29,8 +29,8 @@ export default defineConfig({
 					label: '教程&经验',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: '引言', slug: 'guides/foreword' },
-						{ label: '基础教程',autogenerate: { directory: 'guide' } },
+						{ label: '引言', slug: 'start/foreword' },
+						{ label: '基础教程',autogenerate: { directory: 'guides' } },
 						// { label: '有关复盘', slug: 'guides/review' },
 						{ label: '经验之谈',autogenerate: { directory: 'experience' } },
 
