@@ -6,7 +6,7 @@ lastmod: 2025-04-08T23:34:01Z
 
 <!-- # 简单的本地AI部署教程 -->
 
-**前言**：本教程**DeepSeek-R1-7B**为例，进行AI本地部署流程教学。
+**前言**：本教程以**DeepSeek-R1-7B**为例，进行AI本地部署流程教学。
 
 在本地部署AI大模型前，请确认您的硬件能够满足部署需求（主要确认显存）：
 
@@ -18,7 +18,7 @@ lastmod: 2025-04-08T23:34:01Z
 
 关于量化：
 
-* ollama上的模型大部分为Q4量化，本文所提到的模型也均为Q4量化版，对于其他具体模型的量化方式，建议查看其对应页面的标识。
+ollama上的模型大部分为Q4量化，本文所提到的模型也均为Q4量化版，对于其他具体模型的量化方式，建议查看其对应页面的标识。
 
 ![Snipaste_2025-04-08_22-45-22](../../../assets/AI/Snipaste_2025-04-08_22-45-22-20250408224533-6konm7x.png)
 
@@ -26,8 +26,7 @@ lastmod: 2025-04-08T23:34:01Z
 
 ## 一、**安装 Ollama（核心部署工具）**
 
-1. **下载地址**：[Download Ollama on Windows](https://ollama.com/download)
-2. ![ollama](../../../assets/AI/ollama-20250408103036-0mp7uql.png)
+1. **下载地址**：[Download Ollama on Windows](https://ollama.com/download)![ollama](../../../assets/AI/ollama-20250408103036-0mp7uql.png)
 3. 安装流程：
 
     1. 双击下载的安装包（默认安装至 `C:\Program Files\Ollama`​）；
@@ -73,9 +72,9 @@ ollama run deepseek-r1:7b
 
 ‍
 
-* （对各类新模型感兴趣可去[Ollama](https://ollama.com/models)模型页面寻找，其有着丰富的模型库，支持一键安装和管理超过 1700 个模型，模型格式主要为 GGUF。）
+（对各类新模型感兴趣可去[Ollama](https://ollama.com/models)模型页面寻找，其有着丰富的模型库，支持一键安装和管理超过 1700 个模型，模型格式主要为 GGUF。）
 
-## 三、使用及交互界面优化
+## 三、使用、及交互界面优化
 
 ### 3.1 直接使用
 

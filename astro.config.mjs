@@ -37,8 +37,8 @@ export default defineConfig({
 					],
 				},
 				{
-					label: '碎碎念',
-					autogenerate: { directory: 'reference' },
+					label: '碎碎念&其他',
+					autogenerate: { directory: 'other' },
 				},
 			],
 		}),
